@@ -32,13 +32,35 @@ Consider the names of the tower pegs as A, B, C. Get the number of disks value f
 ### PROGRAM  
 
 ```
+# Name: Vikram GS
+# Reg No: 212222060296
 
+def hanoi(n, source, temp, dest):
+    if n == 1:
+        print("Move disk 1 from", source, "to", dest)
+        return
+    hanoi(n-1, source, dest, temp)
+    print("Move disk", n, "from", source, "to", dest)
+    hanoi(n-1, temp, source, dest)
+
+n = int(input("Enter number of disks: "))
+hanoi(n, 'A', 'B', 'C')
 
 ```
 
 ### OUTPUT
 
+Enter number of disks: 3
+Move disk 1 from A to C
+Move disk 2 from A to B
+Move disk 1 from C to B
+Move disk 3 from A to C
+Move disk 1 from B to A
+Move disk 2 from B to C
+Move disk 1 from A to C
+
 
 
 ### RESULT
 
+Tower of Hanoi problem is solved successfully using recursion.
