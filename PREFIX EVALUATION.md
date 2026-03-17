@@ -28,13 +28,41 @@ To write a Python program to evaluate a user-given Prefix expression using a sta
 ### PROGRAM
 
 ```
+# Name: Vikram GS
+# Reg No: 212222060296
 
+stack = []
+
+exp = input("Enter prefix expression: ")[::-1]
+
+for char in exp:
+    if char.isdigit():
+        stack.append(int(char))
+    else:
+        a = stack.pop()
+        b = stack.pop()
+
+        if char == '+':
+            stack.append(a + b)
+        elif char == '-':
+            stack.append(a - b)
+        elif char == '*':
+            stack.append(a * b)
+        elif char == '/':
+            stack.append(a / b)
+
+print("Result:", stack[0])
 
 ```
 
 
 ### OUTPUT
 
+Enter prefix expression: +9*26
+Result: 21
+
 
 
 ### RESULT
+
+Prefix expression is evaluated successfully.
