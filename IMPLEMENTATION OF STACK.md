@@ -28,4 +28,38 @@ To write a Python program to implement a stack using a list and its built-in met
 
 ```
 
+# Name: Vikram GS
+# Reg No: 212222060296
+
+stack = []
+
+def push():
+    item = input("Enter element: ")
+    stack.append(item)
+    print("Pushed:", item)
+
+def pop():
+    if not stack:
+        print("Stack is empty")
+    else:
+        print("Popped:", stack.pop())
+
+push()
+push()
+pop()
+print("Stack:", stack)
+
 ```
+**Ouput**
+
+Enter element: 10
+Pushed: 10
+Enter element: 20
+Pushed: 20
+Popped: 20
+Stack: ['10']
+
+
+**Result**
+
+Stack operations (push and pop) are performed successfully.
