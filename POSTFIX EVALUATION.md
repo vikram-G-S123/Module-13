@@ -32,12 +32,39 @@ To write a Python program to evaluate a user-given Postfix expression that conta
 ### PROGRAM
 
 ```
+# Name: Vikram GS
+# Reg No: 212222060296
 
+stack = []
+
+exp = input("Enter postfix expression: ")
+
+for char in exp:
+    if char.isdigit():
+        stack.append(int(char))
+    else:
+        b = stack.pop()
+        a = stack.pop()
+
+        if char == '+':
+            stack.append(a + b)
+        elif char == '-':
+            stack.append(a - b)
+        elif char == '*':
+            stack.append(a * b)
+        elif char == '/':
+            stack.append(a / b)
+
+print("Result:", stack[0])
 
 ```
 
 ### OUTPUT
 
+Enter postfix expression: 23*5+
+Result: 11
 
 ### RESULT
+
+Postfix expression is evaluated successfully.
 
