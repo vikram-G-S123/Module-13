@@ -31,10 +31,45 @@ To write a Python program to convert a given Infix expression to Postfix express
 
 ```
 
+# Name: Vikram GS
+# Reg No: 212222060296
+
+def precedence(op):
+    if op == '+' or op == '-':
+        return 1
+    if op == '*' or op == '/':
+        return 2
+    return 0
+
+def infix_to_postfix(expression):
+    stack = []
+    output = ""
+
+    for char in expression:
+        if char.isalnum():
+            output += char
+        else:
+            while stack and precedence(stack[-1]) >= precedence(char):
+                output += stack.pop()
+            stack.append(char)
+
+    while stack:
+        output += stack.pop()
+
+    return output
+
+exp = input("Enter infix expression: ")
+print("Postfix expression:", infix_to_postfix(exp))
+
 ```
 
 ### OUTPUT
 
+Enter infix expression: A+B*C
+Postfix expression: ABC*+
+
 
 ### RESULT
+
+Infix expression is successfully converted to postfix form.
 
